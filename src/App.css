@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #d2d7df;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,161 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(63, 48, 48, 0.1);
+  transition: all 0.4s;
+}
+
+.top-navigation {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  right:100;
+  box-shadow: 3px 3px 10px rgba(63, 48, 48, 0.1);
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+  top: 20;
+}
+
+#menu.active{
+  margin-left: -17rem;
+  top: 20;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  } 
+
+}
+
+body {
+  background: #599fd9;
+  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+  background: linear-gradient(to right, #599fd9, #c2e59c);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+
+.brand {
+  color: #FF9138;
+}
+
+.border-hover {
+  border-top: 5px solid transparent;
+  transform: translateY(-4px);
+}
+
+.border-hover:hover {
+  border-top: 5px solid #ff9138;
+  transform: translateY(-4px);
+}
+
+#sign-in {
+  background: #FF9138;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.navbar-toggler {
+  border: 3px solid #FF9138;
+}
+
+.navbar-toggler-icon {
+  background-image: url(../public/list.svg)
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+#nav-length {
+  width: 90%;
+  height: 5%;
+  position: fixed;
+}
+#socialWrap {
+  border-radius: 24px 0px 0px 24px;
+}
+
+@media screen and (max-width : 992px) {
+  #nav-length {
+      width: 100%;
+  }
+
+  .border-hover {
+      border-top: 0;
+  }
+
+  .border-hover:hover {
+      border-top: 0;
+  }
+
+  #sign-in {
+      border-radius: 50px;
+  }
+}
+
+/* body section */
+.icon-height {
+  height: 28px;
+  width: 28px;
+}
+
+.icon-container {
+  background: #FF9138;
+}
+
+.dark-background {
+  background: #2b3944;
 }
