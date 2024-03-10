@@ -59,8 +59,40 @@ export default function LeftSidebar(props) {
             </a>
     </li>
   </ul>
-</div>
+  <p className="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Object Oriented Programming</p>
 
+<ul className="nav flex-column bg-white mb-4">
+  <li className="nav-item">
+    <a href="/" className="nav-link text-dark font-italic">
+              <i className="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+              Class & Objects
+          </a>
+  </li>
+  <li className="nav-item">
+    <a href="/" className="nav-link text-dark font-italic">
+              <i className="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+              Polymorphism
+          </a>
+  </li>
+  <li className="nav-item">
+    <a href="/" className="nav-link text-dark font-italic">
+              <i className="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+              Inheritance
+          </a>
+  </li>
+  <li className="nav-item">
+    <a href="/" className="nav-link text-dark font-italic">
+              <i className="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+              Abstraction
+          </a>
+  </li>
+</ul>
+
+<div id='justheight'>
+
+</div>
+   
+  </div>
     </>
   )
 }

@@ -43,14 +43,18 @@
   height: 100vh;
   position: fixed;
   left: 0;
-  box-shadow: 3px 3px 10px rgba(63, 48, 48, 0.1);
+  box-shadow: 3px 3px 10px #3f30301a;
   transition: all 0.4s;
+  overflow-y: scroll;
 }
 
+#justheight{
+  height: 20vh;
+}
 
 .page-content {
   width: calc(100% - 17rem);
-  margin-left: 17rem;
+  margin-left: 7rem;
   transition: all 0.4s;
 }
 
@@ -97,9 +101,8 @@ body {
   overflow-x: hidden;
 }
 
-
 .separator {
-  margin: 3rem 0;
+  margin: 2rem 0;
   border-bottom: 1px dashed #fff;
 }
 
@@ -159,12 +162,6 @@ body {
 a.nav-link{
   color: white;
 }
-#socialWrap {
-  border-radius: 24px 0px 0px 24px;
-  height: fit-content;
-  position: fixed;
-
-}
 
 @media screen and (max-width : 992px) {
  
@@ -193,15 +190,7 @@ a.nav-link{
   }
 }
 
-/* body section */
-.icon-height {
-  height: 28px;
-  width: 28px;
-}
 
-.icon-container {
-  background: #FF9138;
-}
 
 .dark-background {
   background: #2b3944;
@@ -305,3 +294,214 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.sticky-icon  {
+	z-index:1;
+	position:fixed;
+	top:50%;
+	right:0%;
+	width:220px;
+	display:flex;
+	flex-direction:column;
+} 
+
+.sticky-icon a  {
+	transform:translate(160px,0px);
+	border-radius:50px 0px 0px 50px;
+	text-align:left;
+	margin:2px;
+	text-decoration:none;
+	text-transform:uppercase;
+	padding:10px;
+	font-size:20px;
+	transition:all 0.8s;
+}
+
+.sticky-icon a:hover  {
+	color:#FFF;
+	transform:translate(0px,0px);}	
+
+.sticky-icon a:hover i  {
+	transform:rotate(360deg);
+}
+
+.Facebook  {
+  background: -webkit-linear-gradient( #0066ff, rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+	
+.Youtube  {
+	background: -webkit-linear-gradient( #ff0000, rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+	
+.Thread{
+	background: -webkit-linear-gradient( #000000, rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+	
+.Instagram  {
+  background: -webkit-linear-gradient(#d14040, #e59cbe);
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+	
+.Google  {
+  background: -webkit-linear-gradient( rgb(242, 60, 60), rgb(95, 161, 205));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sticky-icon a i {
+	height:50px;
+	width:50px;
+  z-index: 99;
+	text-align:center;
+	line-height:40px;
+	border-radius:50%;
+	margin-right:20px;
+	transition:all 0.5s;
+}
+
+.iframely-embed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: white;
+}
+
+#landing {
+  z-index: 100;
+  &:hover {
+    opacity: 0.5;
+  }
+  margin-bottom: 1rem;
+}
+
+#landing {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding-bottom: 4vmin;
+ 
+  width: 100%;
+  height: fit-content;
+  color: #3a3535;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+.title {
+  padding-left: 1em;
+  grid-column: 1 / -1;
+  grid-row: 1;
+
+  font-family: "Prata", serif;
+  font-size: 6vw;
+  width: 100%;
+  z-index: 2;
+
+  .title-inner {
+    display: inline-block;
+  }
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.cafe,
+.mozart {
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+
+.title-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both;
+}
+
+.cafe-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both,
+    text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.mozart-inner {
+  animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title {
+  animation: outer-left 1s 1s ease both;
+}
+
+.cafe {
+  .cafe-inner {
+    display: inline-block;
+  }
+}
+
+.mozart {
+  display: inline-block;
+}
+
+.image {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: -2rem;
+  opacity: 0.8;
+ 
+
+  animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+
+ img{
+  height: 800px;
+  width: 70%;
+ }
+  }
+  @keyframes image-in{
+    from {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import SubMenu from './SubMenu'
+import { Link } from 'react-router-dom'
 export default function Navbar(props) {
   const ImgstyleLogo = {
     height:"50px",
@@ -44,6 +45,7 @@ export default function Navbar(props) {
       document.getElementById("contact").classList.add("active");
     }
     function showAbout(){
+      setMenuItems([]);
       document.getElementById("home").classList.remove("active");
       document.getElementById("courses").classList.remove("active");
       document.getElementById("practice").classList.remove("active");
@@ -51,6 +53,7 @@ export default function Navbar(props) {
       document.getElementById("contact").classList.remove("active");
     }
     function showHome(){
+      setMenuItems([]);
       document.getElementById("home").classList.add("active");
       document.getElementById("courses").classList.remove("active");
       document.getElementById("practice").classList.remove("active");
@@ -98,7 +101,7 @@ export default function Navbar(props) {
                 <a href="/" className="nav-link border-hover" id="logo"><img src="favicon.ico" alt="UPSKILL" style={ImgstyleLogo}  /></a>
               </li>
               <li className="nav-item">
-                <button className="btn bg-transparent nav-link border-hover text-white active" id="home" onClick={showHome}>Home</button>
+                <Link to='/' className="btn bg-transparent nav-link border-hover text-white active" id="home" onClick={showHome}>Home</Link>
               </li>
               <li className="nav-item">
                 <button className="btn bg-transparent nav-link border-hover text-white" id="courses" onClick={showCourses}>Courses</button>
@@ -107,7 +110,7 @@ export default function Navbar(props) {
               <button className="btn bg-transparent nav-link border-hover text-white" id="practice" onClick={showPractice}>Practice</button>
               </li>
               <li className="nav-item">
-                <button className="btn bg-transparent nav-link border-hover text-white" id="about" onClick={showAbout}>About</button>
+                <Link to="/about" className="btn bg-transparent nav-link border-hover text-white" id="about" onClick={showAbout}>About</Link>
               </li>
               <li className="nav-item">
                 <a href="/" className="btn bg-transparent nav-link border-hover text-white" id="contact" onClick={showContact}>Contact</a>
@@ -115,7 +118,9 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <button  id="sign-in" className="nav-link my-2 px-4 text-white btn-outline-light" onClick={showProfile}>
                   <img className="mx-2" src={UserDetails.imgurl} alt="person-circle icon" style={Imgstyle} />
+                
                   {UserDetails.userName}
+                 
                 </button>
               </li>
               <li className="nav-item">
